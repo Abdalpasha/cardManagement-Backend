@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const bankController_1 = require("../controller/bankController");
+const express_1 = require("express");
+let bankControllerObj = new bankController_1.BankController();
+exports.bankRoutes = express_1.Router();
+exports.bankRoutes.post('/createBank', bankControllerObj.createBank);
+exports.bankRoutes.get('/', bankControllerObj.getAllBanks);
+exports.bankRoutes.get('/getByName', bankControllerObj.getBankByName);
+exports.bankRoutes.put('/update/:bankId', bankControllerObj.updateBank);
